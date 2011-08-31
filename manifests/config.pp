@@ -4,7 +4,7 @@
 define mysql::config ( 
 	$ensure = 'present', 
 	$content = '',
-	$order="500", 
+	$order="500"
 	) {
 	
 	require mysql::params
@@ -20,7 +20,7 @@ define mysql::config (
 	
 	file { "mysql_conf_dir":
         path    => "${mysql::params::config_dir}",
-        mode    => "755",
+        mode    => 0644,
         owner   => "root",
         group   => "root",
         ensure  => directory,
