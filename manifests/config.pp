@@ -15,7 +15,5 @@ define mysql::config (
 		mode => 644,
 		owner => root,
 		group => root,
-		notify => Service["mysql-server"],
-		before => Service["mysql-server"],
 	}
 }
