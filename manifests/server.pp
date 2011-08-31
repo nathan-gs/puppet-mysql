@@ -14,9 +14,9 @@ class mysql::server inherits mysql::base {
 		subscribe	=> File["mysql_conf"],
 	}
 	
-	mysql::config( "server" :
+	mysql::config { "server" :
 		order		=> '000',
 		content		=> template("mysql/server.erb")
-	)
+	}
 	
 }
