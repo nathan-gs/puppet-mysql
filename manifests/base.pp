@@ -19,4 +19,8 @@ class mysql::base {
         ensure  => directory,
     }
 	
+	file { "${mysql::params::config_dir}/mysqld_safe_syslog.cnf" : 
+		ensure	=> absent,
+	}
+	
 }

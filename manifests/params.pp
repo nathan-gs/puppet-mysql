@@ -23,4 +23,10 @@ class mysql::params {
 	$init_config = $operatingsystem ? {
 		/(?i-mx:ubuntu|debian)/		=> '/etc/default/mysql',
 	}
+	
+	$mysql_query_client = $operatingsystem ? {
+		/(?i-mx:ubuntu|debian)/		=> 'mysql --defaults-file=/etc/mysql/debian.cnf',
+	}
+	
+	$mysql_query_path = '/etc/mysql/query'
 }
