@@ -4,7 +4,7 @@ class mysql::params {
 		/(?i-mx:ubuntu|debian)/		=> 'mysql-server',
 	}
 	
-	$servicename  ? {
+	$servicename = $operatingsystem ? {
 		/(?i-mx:ubuntu|debian)/		=> 'mysql',
 	}
 	
