@@ -1,0 +1,7 @@
+[mysqld]
+
+log_slow_queries                = <%= log %>
+long-query-time                 = <%= long_query_time %>
+<% if not_using_indexes == true %>
+log-queries-not-using-indexes
+<% end -%>

@@ -1,0 +1,9 @@
+[mysqld]
+<% if use_plugin == true %>
+ignore_builtin_innodb
+plugin-load=innodb=ha_innodb_plugin.so
+<% end -%>
+
+<% if file_per_table == true %>
+innodb_file_per_table
+<% end -%>
