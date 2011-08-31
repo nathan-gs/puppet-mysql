@@ -1,4 +1,4 @@
-class mysql::server::2500m {
+class mysql::server::mem2500 {
 	require mysql::server
 	
 	mysql::config::innodb{ "2500m_inno" :
