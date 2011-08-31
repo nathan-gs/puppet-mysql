@@ -5,7 +5,7 @@ define mysql::config::log (
 ) {
 	
 	mysql::config { "log" : 
-		content		=> template('mysql/log.erb),
+		content		=> template('mysql/log.erb'),
 		order		=> $order,
 	}
 

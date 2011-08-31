@@ -10,7 +10,7 @@ define mysql::config::performance (
 ) {
 	
 	mysql::config { "performance" : 
-		content		=> template('mysql/performance.erb),
+		content		=> template('mysql/performance.erb'),
 		order		=> $order,
 	}
 

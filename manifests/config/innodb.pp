@@ -5,7 +5,7 @@ define mysql::config::innodb (
 ) {
 	
 	mysql::config { "innodb" : 
-		content		=> template('mysql/innodb.erb),
+		content		=> template('mysql/innodb.erb'),
 		order		=> $order,
 	}
 
