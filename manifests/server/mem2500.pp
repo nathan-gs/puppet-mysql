@@ -10,6 +10,6 @@ class mysql::server::mem2500 {
 	
 	mysql::config::performance { "2500m_performance" : 
 		table_cache					=> 2500,
-		query_cache_size			=> '400M',
+		query_cache					=> '400M',
 	}
 }
