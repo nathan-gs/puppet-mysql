@@ -11,4 +11,12 @@ class mysql::base {
         content => template("mysql/my.cnf.erb"),
     }
 	
+	file { "mysql_conf_dir":
+        path    => "${mysql::params::config_dir}",
+        mode    => 0644,
+        owner   => "root",
+        group   => "root",
+        ensure  => directory,
+    }
+	
 }
