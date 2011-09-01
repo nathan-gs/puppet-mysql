@@ -6,7 +6,7 @@ class mysql::server inherits mysql::base {
 		ensure		=> present,
 	}
 	
-	service { "mysql-server" : 
+	service { "mysql" : 
 		name		=> "${mysql::params::servicename}",
 		ensure		=> running,
 		enable		=> true,

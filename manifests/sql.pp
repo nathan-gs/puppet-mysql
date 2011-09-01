@@ -23,7 +23,7 @@ define mysql::sql (
         path => "${mysql::params::mysql_query_path}/${sql_hash}.sql",
         content => $real_template,
         notify => Exec["mysqlquery-${sql_hash}"],
-        require => [Service["mysql-server"], [File["${mysql::params::mysql_query_path}"]]],
+        require => [Service["mysql"], [File["${mysql::params::mysql_query_path}"]]],
     }
 	
 	exec { "mysqlquery-${sql_hash}" :
