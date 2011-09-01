@@ -7,6 +7,8 @@ define mysql::database (
 	 'absent'		=> 'DROP DATABASE ${name} IF EXISTS'
 	}
 	
-	mysql::sql { $sql }
+	mysql::sql { $sql:
+		
+	}
 
 }
