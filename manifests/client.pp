@@ -2,7 +2,7 @@ class mysql::client {
 	include mysql::params
 
 		
-	mysql::config { "server" :
+	mysql::config { "client" :
 		order		=> '000',
 		content		=> template("mysql/client.erb"),
 	}
