@@ -1,5 +1,5 @@
 define mysql::database (
-	ensure		=> 'present',
+	$ensure		= 'present',
 ) {
 	
 	$sql = $ensure ? {
