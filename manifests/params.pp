@@ -17,7 +17,7 @@ class mysql::params {
 	}
 	
 	$config_dir = $operatingsystem ? {
-		default						=> '/etc/mysql/conf.d',
+		default						=> '/etc/mysql/conf.d/',
 	}
 	
 	$init_config = $operatingsystem ? {
