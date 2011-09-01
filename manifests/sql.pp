@@ -28,7 +28,7 @@ define mysql::sql (
 	
 	exec { "mysqlquery-${sql_hash}" :
             command => "${mysql::params::mysql_query_client} < ${mysql::params::mysql_query_path}/${sql_hash}.sql",
-            require => [File["${mysql::params::mysql_query_path}/${sql_hash}.sql"],Package["mysql-client"]]
+            require => [File["${mysql::params::mysql_query_path}/${sql_hash}.sql"],Package["mysql-client"]],
             refreshonly => true,
             subscribe => File["${mysql::params::mysql_query_path}/${sql_hash}.sql"],
             path    => [ "/usr/bin" , "/usr/sbin" ],
