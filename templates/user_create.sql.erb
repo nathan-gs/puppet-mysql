@@ -1,4 +1,4 @@
-GRANT <%= privileges => ON <%= db %> TO '<%= real_user %>'@'<%= host =>' 
+GRANT <%= privileges %> ON <%= db %> TO '<%= real_user %>'@'<%= host =>' 
 <% if is_encrypted == true %>
 IDENTIFIED BY PASSWORD '<%= password %>'
 <% else %>
