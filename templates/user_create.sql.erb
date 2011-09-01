@@ -1,0 +1,10 @@
+GRANT <%= privileges => ON <%= db %> TO '<%= name %>'@'<%= host =>' 
+<% if is_encrypted == true %>
+IDENTIFIED BY PASSWORD '<%= password %>'
+<% else %>
+IDENTIFIED BY '<%= password %>' 
+<% end -%>
+<% if privileges == 'ALL PRIVILEGES' %>
+WITH GRANT OPTION
+<% end -%>
+;
