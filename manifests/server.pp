@@ -20,14 +20,16 @@ class mysql::server inherits mysql::base {
 		notify		=> Service["mysql-server"]
 	}
 	
-	mysql::user { "root" :
+	mysql::user { "root-localhost" :
+		user		=> 'root',
 		ensure		=> absent,
 		host		=> 'localhost',
 		require		=> Service["mysql-server"]
 	}
 	
-	mysql::user { "root" :
+	mysql::user { "root-127.0.0.1" :
 		ensure		=> absent,
+		user		=> 'root',
 		host		=> '127.0.0.1',
 		require		=> Service["mysql-server"]
 	}
