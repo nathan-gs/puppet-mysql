@@ -11,4 +11,12 @@ class mysql::client {
         name   => "${mysql::params::packages_client}",
         ensure => present,
     }
+	
+	file { "${mysql::params::mysql_query_path}" :
+		mode	=> 700,
+		ensure	=> directory,
+		owner	=> root,
+		group	=> root
+	}
+	
 }

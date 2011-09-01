@@ -17,13 +17,6 @@ define mysql::sql (
 	
 	$sql_hash = sha1($sql)
 	
-	file { "${mysql::params::mysql_query_path}" :
-		mode	=> 700,
-		ensure	=> directory,
-		owner	=> root,
-		group	=> root
-	}
-	
 	file { "${mysql::params::mysql_query_path}/${sql_hash}.sql" :
 	    mode => 600, owner => root, group => root,
         ensure => present,
