@@ -17,21 +17,21 @@ class mysql::server inherits mysql::base {
 	mysql::config { "server" :
 		order		=> '001',
 		content		=> template("mysql/server.erb"),
-		notify		=> Service["mysql-server"]
+		notify		=> Service["mysql"]
 	}
 	
 	mysql::user { "root-localhost" :
 		user		=> 'root',
 		ensure		=> absent,
 		host		=> 'localhost',
-		require		=> Service["mysql-server"]
+		require		=> Service["mysql"]
 	}
 	
 	mysql::user { "root-127.0.0.1" :
 		ensure		=> absent,
 		user		=> 'root',
 		host		=> '127.0.0.1',
-		require		=> Service["mysql-server"]
+		require		=> Service["mysql"]
 	}
 	
 }
