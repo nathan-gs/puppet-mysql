@@ -3,7 +3,7 @@ define mysql::database (
 ) {
 	
 	$sql = $ensure ? {
-	 'present'      => "CREATE DATABASE IF NOT EXISTS `${name}`",
+	 'present'      => "CREATE DATABASE IF NOT EXISTS `${name}` CHARACTER SET utf8 COLLATE utf8_general_ci",
 	 'absent'		=> "DROP DATABASE IF EXISTS `${name}`"
 	}
 	
