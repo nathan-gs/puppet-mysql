@@ -32,7 +32,7 @@ define mysql::sql (
             refreshonly => true,
             subscribe => File["${mysql::params::mysql_query_path}/${sql_hash}.sql"],
             path    => [ "/usr/bin" , "/usr/sbin" ],
-            logoutput => "on_failure",
+            logoutput => true,
     }
 	
 }
