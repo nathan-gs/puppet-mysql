@@ -20,12 +20,6 @@ class mysql::server inherits mysql::base {
 		notify		=> Service["mysql"]
 	}
 	
-	mysql::config { "utf8" :
-		order		=> '700',
-		content		=> template("mysql/utf8.erb"),
-		notify		=> Service["mysql"]
-	}
-	
 	mysql::user { "root-localhost" :
 		user		=> 'root',
 		ensure		=> absent,
