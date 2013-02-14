@@ -14,7 +14,7 @@ class mysql::params(
 	
 	$packages_client = $operatingsystem ? {
 		/(?i-mx:ubuntu|debian)/		=> 'mysql-client',
-		/(?i-mx:centos)/	    	=> 'mysql-client',
+		/(?i-mx:centos)/	    	=> 'mysql',
 	}
 	
 	$config_file = $operatingsystem ? {
